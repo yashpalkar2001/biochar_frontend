@@ -1,0 +1,29 @@
+import React from "react";
+
+const Footer = () => {
+  return (
+    <footer className="bg-gray-900 text-white text-sm">
+      <div className="max-w-7xl mx-auto px-4 py-8 flex flex-col md:flex-row md:justify-between md:items-center">
+        {/* Left - Copyright */}
+        <div className="mb-4 md:mb-0">
+          © 2025 Heartfulness. All rights reserved.
+        </div>
+
+        {/* Right - Links */}
+        <div className="flex flex-col gap-2 md:flex-row md:gap-6 text-white underline underline-offset-2">
+          <a href="#" className="hover:text-gray-300">
+            Terms of use
+          </a>
+          <a href="#" className="hover:text-gray-300">
+            Cookie settings
+          </a>
+          <a href="#" className="hover:text-gray-300">
+            Kanha Shantivanam
+          </a>
+        </div>
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

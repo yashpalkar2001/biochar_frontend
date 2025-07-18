@@ -1,10 +1,11 @@
+"use client";
 import React from "react";
 
 const Header = () => {
   return (
     <>
       <div className="w-full fixed z-30 lg:top-7">
-        <div className="  w-full flex justify-between items-center p-3 bg-black text-white lg:rounded-full lg:px-5 lg:w-[70%] lg:mx-auto">
+        <div className="  w-full flex justify-between items-center p-3 bg-black text-white lg:rounded-full lg:px-5 lg:w-[90%] lg:mx-auto">
           <div>
             <h4>Logo</h4>
           </div>
