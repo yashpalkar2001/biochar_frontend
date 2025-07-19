@@ -16,7 +16,7 @@ const Hero = () => {
       />
       {/* </div> */}
       {/* for mobile view */}
-      <div className="bg-black px-4 py-10 md:hidden">
+      <div className="bg-black px-4 py-10 font-serif md:hidden">
         <h1 className="text-[1.5rem] text-white w-[50%]">
           Carbon to Community with Biochar
         </h1>
@@ -32,7 +32,7 @@ const Hero = () => {
       </div>
 
       {/* for website view */}
-      <div className="hidden px-4 py-10 md:block absolute top-14 left-4 lg:top-[17%] lg:left-[6%] xl:top-[24%]">
+      <div className="hidden font-serif px-4 py-10 md:block absolute top-14 left-4 lg:top-[17%] lg:left-[6%] xl:top-[24%]">
         <h1 className="text-[2.5rem] text-white w-[70%] xl:text-[3.5rem]">
           Carbon to Community with Biochar
         </h1>

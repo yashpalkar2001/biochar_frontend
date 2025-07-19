@@ -72,9 +72,9 @@ const TransfomationPart = () => {
               testament to harmony with nature.”
             </p>
 
-            <div className="text-lg py-4">
-              <p className="font-me dium">Patricia Scotland</p>
-              <p className="text-gray-300">Secretary General, Commonwealth</p>
+            <div className="text-lg py-4 text-gray-300">
+              <p className="">Patricia Scotland</p>
+              <p className="">Secretary General, Commonwealth</p>
             </div>
           </div>
         </article>
@@ -121,8 +121,8 @@ const TransfomationPart = () => {
 
             {/* Content */}
             <div className="p-8 space-y-4">
-              <div className="text-sm">
-                <p className="font-medium">Patricia Scotland</p>
+              <div className="text-sm font-normal text-gray-300">
+                <p className="">Patricia Scotland</p>
                 <p className="text-gray-300">Secretary General, Commonwealth</p>
               </div>
 
@@ -141,7 +141,7 @@ const TransfomationPart = () => {
         <div className="md:hidden my-8 space-y-6 mx-6">
           {/* Image banner */}
           <Image
-            src="/cardImg.jpg"
+            src="/farmer.png"
             alt="Aerial view of farmland"
             width={800}
             height={450}
@@ -150,7 +150,7 @@ const TransfomationPart = () => {
 
           {/* Stat card */}
           <div className="bg-white rounded-2xl shadow px-8 py-12 text-center">
-            <h3 className="font-serif text-5xl leading-none mb-6">
+            <h3 className="font-roboto font-semibold text-5xl leading-none mb-6">
               18 Million
               <br />
               farmers
@@ -160,7 +160,7 @@ const TransfomationPart = () => {
             </p>
           </div>
           <div className="bg-white rounded-2xl shadow px-8 py-12 text-center">
-            <h3 className="font-serif text-5xl leading-none mb-6">
+            <h3 className="font-roboto font-semibold text-5xl leading-none mb-6">
               18 Million
               <br />
               farmers
@@ -170,7 +170,7 @@ const TransfomationPart = () => {
             </p>
           </div>
           <div className="bg-white rounded-2xl shadow px-8 py-12 text-center">
-            <h3 className="font-serif text-5xl leading-none mb-6">
+            <h3 className="font-roboto font-semibold text-5xl leading-none mb-6">
               18 Million
               <br />
               farmers
@@ -183,8 +183,7 @@ const TransfomationPart = () => {
             <span className="absolute top-6 right-6 bg-black text-xs px-3 py-1 rounded">
               Current
             </span>
-
-            <h3 className="font-serif text-5xl leading-none mb-6">
+            <h3 className="font-roboto font-semibold text-5xl leading-none mb-6">
               3,216
               <br />
               credits
@@ -196,7 +195,7 @@ const TransfomationPart = () => {
               Current
             </span>
 
-            <h3 className="font-serif text-5xl leading-none mb-6">
+            <h3 className="font-roboto font-semibold text-5xl leading-none mb-6">
               3,216
               <br />
               credits
@@ -204,26 +203,32 @@ const TransfomationPart = () => {
             <p className="text-sm text-gray-300">From 20 sites across India</p>
           </div>
         </div>
-        {/* ─────────── Desktop-only stats grid (≥ md) ─────────── */}
-        <div className="hidden md:flex gap-6 mt-16 px-6 max-w-7xl mx-auto overflow-hidden">
-          {/* Left – Main Image */}
-          <div className="flex flex-col gap-6 w-full">
-            <div className="w-full">
-              <Image
-                src="/cardImg.jpg"
-                alt="Farmer in field"
-                width={1000}
-                height={800}
-                className="w-full h-[90vh] object-cover rounded-xl"
-              />
-            </div>
 
-            <div className="flex gap-6">
+        {/* ─────────── Desktop / Tablet block (≥ md) ─────────── */}
+        <div
+          className="hidden md:grid mt-16 gap-6 md:px-0  
+                max-w-[1440px] mx-auto              
+                grid-cols-[2fr_1fr]"
+        >
+          {/* 2-column grid 2:1 */}
+          {/* Left : hero image + two dark stats */}
+          <div className="grid grid-rows-[auto_auto] gap-6">
+            {/* Hero image */}
+            <Image
+              src="/farmer.png"
+              alt="Farmer in field"
+              width={1500}
+              height={900}
+              className="w-full h-full object-cover rounded-xl lg:h-[70vh]"
+            />
+
+            {/* Two dark cards */}
+            <div className="grid grid-cols-2 gap-6">
               <div className="relative bg-[#08141f] text-white rounded-2xl px-6 py-5">
                 <span className="absolute top-6 right-6 bg-black text-xs px-3 py-1 rounded">
                   Current
                 </span>
-                <h3 className="font-serif text-5xl leading-none mb-6">
+                <h3 className="font-roboto font-semibold text-5xl leading-none mb-6">
                   6,948 <br /> farmers
                 </h3>
                 <p className="text-sm text-gray-300">
@@ -235,7 +240,7 @@ const TransfomationPart = () => {
                 <span className="absolute top-6 right-6 bg-black text-xs px-3 py-1 rounded">
                   Current
                 </span>
-                <h3 className="font-serif text-5xl leading-none mb-6">
+                <h3 className="font-roboto font-semibold text-5xl leading-none mb-6">
                   3,216 <br /> credits
                 </h3>
                 <p className="text-sm text-gray-300">
@@ -244,11 +249,10 @@ const TransfomationPart = () => {
               </div>
             </div>
           </div>
-
-          {/* Right – Stats Cards */}
-          <div className="flex flex-col space-y-6">
+          {/* Right : three white stat cards */}
+          <div className="flex flex-col space-y-6 w-full">
             <div className="bg-white rounded-2xl shadow px-8 py-12">
-              <h3 className="font-serif text-4xl leading-tight mb-4">
+              <h3 className="text-4xl font-roboto font-semibold leading-tight mb-4">
                 18 Million <br /> farmers
               </h3>
               <p className="text-sm text-gray-600">
@@ -257,7 +261,7 @@ const TransfomationPart = () => {
             </div>
 
             <div className="bg-white rounded-2xl shadow px-8 py-12">
-              <h3 className="font-serif text-4xl leading-tight mb-4">
+              <h3 className="text-4xl font-roboto font-semibold leading-tight mb-4">
                 100,000+ <br /> villages
               </h3>
               <p className="text-sm text-gray-600">
@@ -266,7 +270,7 @@ const TransfomationPart = () => {
             </div>
 
             <div className="bg-white rounded-2xl shadow px-8 py-12">
-              <h3 className="font-serif text-4xl leading-tight mb-4">
+              <h3 className="text-4xl font-roboto font-semibold leading-tight mb-4">
                 2 Million <br /> Carbon Credits
               </h3>
               <p className="text-sm text-gray-600">By 2030</p>

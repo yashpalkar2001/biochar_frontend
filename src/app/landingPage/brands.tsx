@@ -1,52 +1,52 @@
 "use client";
 import React from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
-const Brands = () => {
-  const logos = [
-    "/brand.png",
-    "/brand.png",
-    "/brand.png",
-    "/brand.png",
-    "/brand.png",
-    "/brand.png",
-  ];
+const logos = [
+  "/brand.png",
+  "/brand.png",
+  "/brand.png",
+  "/brand.png",
+  "/brand.png",
+  "/brand.png",
+];
+
+export default function Brands() {
+  /** Duplicate the logos so the strip can loop seamlessly */
+  const loopLogos = [...logos, ...logos];
+
   return (
-    <>
-      <section className="bg-[#08141f] text-white">
-        <div className="max-w-7xl mx-auto px-6 py-16">
-          {/* Tagline */}
-          <p className="text-center text-xs uppercase tracking-wider text-gray-400 mb-10">
-            Loved and supported by
-          </p>
+    <section className="bg-[#08141f] text-white">
+      <div className="max-w-7xl mx-auto px-6 py-16 overflow-hidden">
+        {/* Tagline */}
+        <p className="text-center text-xs uppercase tracking-wider text-gray-400 mb-10">
+          Loved and supported by
+        </p>
 
-          {/* Logos */}
-          <div
-            className="grid grid-cols-2 gap-8 items-center justify-items-center
-                      md:flex md:justify-between md:space-x-12"
-          >
-            {logos.map((src, i) => (
-              <Image
-                key={i}
-                src={src}
-                alt="Partner logo"
-                width={120}
-                height={40}
-                className="h-6 w-auto"
-              />
-            ))}
-          </div>
-
-          {/* Bullet indicators (static example) */}
-          <div className="flex justify-center mt-10 space-x-2 md:hidden">
-            {[0, 1, 2].map((d) => (
-              <span key={d} className="h-1.5 w-1.5 rounded-full bg-gray-300" />
-            ))}
-          </div>
-        </div>
-      </section>
-    </>
+        {/* Infinite marquee */}
+        <motion.div
+          className="flex gap-12 items-center"
+          /** The magic: slide from 0 → -50% and repeat forever */
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{
+            repeat: Infinity,
+            duration: 20, // speed (seconds)
+            ease: "linear",
+          }}
+        >
+          {loopLogos.map((src, i) => (
+            <Image
+              key={i}
+              src={src}
+              alt="Partner logo"
+              width={120}
+              height={40}
+              className="h-6 w-auto flex-shrink-0"
+            />
+          ))}
+        </motion.div>
+      </div>
+    </section>
   );
-};
-
-export default Brands;
+}

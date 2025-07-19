@@ -150,12 +150,12 @@ const CardsPart = () => {
         {/* desktop view from tablet  */}
         <div className="relative pt-5 md:px-10">
           {/* Slides container */}
-          <div className="overflow-hidden" style={{ scrollBehavior: "smooth" }}>
-            <div className="hidden md:flex md:flex-col transition-transform duration-500">
+          <div className="" style={{ scrollBehavior: "smooth" }}>
+            <div className="hidden md:flex md:flex-col transition-transform duration-500 ">
               {slides.map((slide, i) => (
                 <div
                   key={slide.title}
-                  className="min-w-full md:min-w-0 md:w-full px-0 md:px-0 md:py-5"
+                  className="min-w-full md:min-w-0 md:w-full px-0 md:px-0 md:py-5 sticky top-14 z-10"
                 >
                   <div
                     className={`rounded-xl overflow-hidden flex flex-col md:flex-row 
