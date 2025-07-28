@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const Footer = () => {
@@ -11,9 +12,9 @@ const Footer = () => {
 
         {/* Right - Links */}
         <div className="flex flex-col gap-2 md:flex-row md:gap-6 text-white underline underline-offset-2">
-          <a href="#" className="hover:text-gray-300">
+          <Link href="/termAndCondition" className="hover:text-gray-300">
             Terms of use
-          </a>
+          </Link>
           <a href="#" className="hover:text-gray-300">
             Cookie settings
           </a>

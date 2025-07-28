@@ -87,8 +87,8 @@ export default function FormAndFaq() {
   }
 
   return (
-    <section className="">
-      <div className="max-w-7xl mx-auto md:grid md:grid-cols-12">
+    <section className=" " id="formForId">
+      <div className="max-w-7xl mt-8 mx-auto md:grid md:grid-cols-12">
         {/* ─────── Image (above on mobile, left on desktop) ─────── */}
         <div className="relative md:col-span-6">
           <Image

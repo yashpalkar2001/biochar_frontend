@@ -92,8 +92,10 @@ const TransfomationPart = () => {
                 className="w-full h-full object-cover"
               />
             </div>
+          </div>
 
-            {/* Content */}
+          {/* Right – After image + Content */}
+          <div className="md:w-1/2 flex flex-col relative ">
             <div className="p-8 space-y-4">
               <p className="font-serif text-lg leading-relaxed">
                 “Vision, ingenuity, and labor have transformed what was once
@@ -102,21 +104,6 @@ const TransfomationPart = () => {
                 medicinal and edible plants, and organic farms. Kanha Shanti
                 Vanam has become a testament to harmony with nature.”
               </p>
-            </div>
-          </div>
-
-          {/* Right – After image + Content */}
-          <div className="md:w-1/2 flex flex-col relative ">
-            {/* After image */}
-            <div className="relative">
-              <Image
-                src="/girl.png"
-                alt="Girl after transformation"
-                width={600}
-                height={500}
-                className="w-full h-full object-cover "
-              />
-              <div className="absolute inset-0 bg-green-400 opacity-60 mix-blend-multiply rounded" />
             </div>
 
             {/* Content */}

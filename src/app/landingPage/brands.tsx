@@ -4,12 +4,16 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 
 const logos = [
-  "/brand.png",
-  "/brand.png",
-  "/brand.png",
-  "/brand.png",
-  "/brand.png",
-  "/brand.png",
+  "/Logos/brand1.png",
+  "/Logos/brand2.png",
+  "/Logos/brand3.png",
+  "/Logos/brand4.png",
+  "/Logos/brand5.png",
+  "/Logos/brand6.png",
+  "/Logos/brand7.png",
+  "/Logos/brand8.png",
+  "/Logos/brand9.png",
+  "/Logos/brand10.png",
 ];
 
 export default function Brands() {
@@ -42,7 +46,7 @@ export default function Brands() {
               alt="Partner logo"
               width={120}
               height={40}
-              className="h-6 w-auto flex-shrink-0"
+              className=" w-auto flex-shrink-0"
             />
           ))}
         </motion.div>

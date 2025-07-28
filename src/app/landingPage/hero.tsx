@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const Hero = () => {
@@ -37,12 +38,12 @@ const Hero = () => {
           Carbon to Community with Biochar
         </h1>
         <p className="text-[0.8rem] text-white w-[50%] py-4 xl:text-[1.8rem]">
-          As carbon emissions rise, rural livelihoods vanish. Two crises. One
-          solution.
+          As carbon emissions rise rural livelihood vanish Two Crisis One
+          Solutions.
         </p>
         <div className="pt-5">
           <button className="bg-white text-black px-3 py-1 rounded-full text-sm xl:text-[1.2rem] xl:px-7 xl:py-3">
-            Buy Carbon Credits
+            <a href="#formForId">Buy Carbon Credits</a>
           </button>
         </div>
       </div>
