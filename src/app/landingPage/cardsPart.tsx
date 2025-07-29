@@ -1,11 +1,17 @@
 "use client";
 import Image from "next/image";
 import React, { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
+interface Slide {
+  title: string;
+  bullets: string[];
+  images: string[];
+}
 const CardsPart = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const slides = [
+  const slides: Slide[] = [
     {
       title: "Permanent Carbon Removal",
       bullets: [
@@ -13,7 +19,7 @@ const CardsPart = () => {
         "Local & Sustainable: Produced and applied to soil locally, minimizing carbon footprint of carbon sequestering activity.",
         "Verified & Transparent: Fully traceable via Digital MRV and certified by Carbon Standards International (CSI), delivering assured impact.",
       ],
-      image: "/cardImg.jpg",
+      images: ["/CardsImg/card1.png", "/CardsImg/card2.jpg"],
     },
     {
       title: "Empowering Communities",
@@ -22,7 +28,12 @@ const CardsPart = () => {
         "Soil Health: Biochar improves soil moisture and structure and permanently increases fertility by bringing back microbial life in soil for generations.",
         "Farmer Prosperity: Our field trials across diverse zones demonstrate better crop yields & farmer income year after year, with a single application of biochar. Carbon finance makes biochar affordable and accessible to farmers.",
       ],
-      image: "/cardImg.jpg",
+      images: [
+        "/CardsImg/card3.jpg",
+        "/CardsImg/card4.jpg",
+        "/CardsImg/card5.png",
+        "/CardsImg/card6.png",
+      ],
     },
     {
       title: "Research & Adoption",
@@ -31,7 +42,7 @@ const CardsPart = () => {
         "Backed by Science: Trials with 144 farmers across 3 districts showed 18–32% yield gains in diverse soils & practices. Partnership with ICAR-CICR.",
         "Innovation: In-situ pyrolysis enables on-farm production of biochar, reducing logistics costs and improving unit economics.",
       ],
-      image: "/cardImg.jpg",
+      images: ["/CardsImg/card7.png", "/CardsImg/card8.png"],
     },
     {
       title: "Scale",
@@ -41,104 +52,81 @@ const CardsPart = () => {
         "Collaborative Model: Partnering with ICAR-CICR, Samunnati, Arvind Mills, Pratibha Syntex, and dMRV partners for science, adoption, and transparency.",
         "SDG-aligned: Driving climate action, rural livelihoods, healthy soils, biodiversity and food security.",
       ],
-      image: "/cardImg.jpg",
+      images: ["/cardImg.jpg"],
     },
   ];
 
   return (
-    <>
-      <section className="max-w-7xl mx-auto px-4 lg:py-24 py-12">
-        {/* Section Heading */}
-        <div className="text-center mb-10 lg:mb-16">
-          <p className="text-sm lg:text-base font-light tracking-wide text-gray-500 mb-4">
-            What sets HeartyCulture Biochar apart?
-          </p>
-          <h2 className="font-semibold text-2xl md:text-3xl md:font-normal px-[10%] lg:text-5xl leading-tight">
-            Permanent carbon removal that drives
-            <br className="hidden lg:block" />
-            real community impact
-          </h2>
-        </div>
+    <section id="whyUs" className="max-w-7xl mx-auto px-4 lg:py-24 py-12">
+      <div className="text-center mb-10 lg:mb-16">
+        <p className="text-sm lg:text-base font-light tracking-wide text-gray-500 mb-4">
+          What sets HeartyCulture Biochar apart?
+        </p>
+        <h2 className="font-semibold text-2xl md:text-3xl md:font-normal px-[10%] lg:text-5xl leading-tight">
+          Permanent carbon removal that drives
+          <br className="hidden lg:block" />
+          real community impact
+        </h2>
+      </div>
 
-        {/* About Section */}
-        <div className="md:flex md:justify-between w-full md:px-10">
-          <article className="block text-gray-700 space-y-6 text-base leading-relaxed md:hidden">
-            <p>
-              Heartyculture has been applying biochar to soil since 2016 to
-              restore barren lands, improve survival rate of saplings in
-              afforestation and positively impact agriculture.
-            </p>
-          </article>
-          <article className="hidden md:block md:col-span-8 text-gray-700 space-y-6 text-base lg:text-lg leading-relaxed">
-            <p>
-              Heartyculture has been applying biochar to soil since 2016 to
-              restore barren lands, improve survival rate of saplings in
-              afforestation and positively impact agriculture. Our mission is to
-              enable youth and women entrepreneurs to set up a biochar business
-              in every village of India, empowering local communities to improve
-              livelihoods, soil fertility, crop yield and income.
-            </p>
-            <p>
-              A barren land of 1,400 acres near Hyderabad, India with water
-              table 1,200 feet below ground and very poor soil conditions has
-              been transformed into a green oasis. Heartyculture biochar was
-              born from this remarkable success. Today, we have applied biochar
-              to 10,000 acres of afforestation and agricultural farms across 8
-              states of India, improving sapling survival rate and crop yield.
-            </p>
-          </article>
-        </div>
-
-        {/* Tab Navigation (Desktop + Mobile) */}
-        <nav className="w-full md:px-10 py-5 overflow-x-scroll md:overflow-x-hidden">
-          <ul className="w-full flex flex-nowrap justify-start gap-4 text-sm sm:text-base md:text-lg font-medium">
-            {slides.map((slide, index) => (
-              <li
-                key={index}
-                onClick={() => setActiveIndex(index)}
-                className={`cursor-pointer px-4 py-1 text-nowrap rounded-full border ${
-                  activeIndex === index
-                    ? "bg-gray-900 text-white"
-                    : "text-gray-600 hover:text-gray-900"
-                }`}
-              >
-                {slide.title}
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        {/* Responsive Card – Only show activeIndex */}
-        <div className="relative pt-3 md:px-10">
-          <div
-            className={`rounded-xl overflow-hidden flex flex-col md:flex-row transition-all duration-300 ease-in-out`}
+      {/* Tab Navigation */}
+      <nav className="w-full flex flex-wrap justify-center gap-4 md:gap-6 py-5 mb-10">
+        {slides.map((slide, index) => (
+          <button
+            key={index}
+            onClick={() => setActiveIndex(index)}
+            className={`px-4 py-2 rounded-full text-sm md:text-base transition-all border ${
+              activeIndex === index
+                ? "bg-gray-900 text-white border-gray-900"
+                : "bg-white text-gray-600 hover:text-black border-gray-300"
+            }`}
           >
-            {/* Text side */}
-            <div className="bg-gray-900 text-white md:w-1/2 p-8 space-y-6 flex flex-col justify-center">
-              <h3 className="font-serif text-xl md:text-2xl lg:text-3xl mb-4">
-                {slides[activeIndex].title}
-              </h3>
-              <ul className="list-disc pl-5 space-y-3 text-sm md:text-base leading-relaxed">
-                {slides[activeIndex].bullets.map((b) => (
-                  <li key={b}>{b}</li>
-                ))}
-              </ul>
-            </div>
+            {slide.title}
+          </button>
+        ))}
+      </nav>
 
-            {/* Image side */}
-            <div className="md:w-1/2 h-48 md:h-auto">
-              <Image
-                src={slides[activeIndex].image}
-                alt={slides[activeIndex].title}
-                width={100}
-                height={100}
-                className="h-full w-full object-cover"
-              />
-            </div>
+      {/* Card Content */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={activeIndex}
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -30 }}
+          transition={{ duration: 0.4 }}
+          className="flex flex-col md:flex-row gap-6 rounded-xl overflow-hidden"
+        >
+          {/* Text side */}
+          <div className="bg-gray-900 text-white md:w-1/2 p-8 space-y-6 flex flex-col justify-center">
+            <h3 className="font-serif text-2xl lg:text-3xl mb-4">
+              {slides[activeIndex].title}
+            </h3>
+            <ul className="list-disc pl-5 space-y-3 text-sm md:text-base leading-relaxed">
+              {slides[activeIndex].bullets.map((bullet, i) => (
+                <li key={i}>{bullet}</li>
+              ))}
+            </ul>
           </div>
-        </div>
-      </section>
-    </>
+
+          {/* Image Grid */}
+          <div className="md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-4 justify-center items-center">
+            {slides[activeIndex].images.map((img, i) => (
+              <div
+                key={i}
+                className="w-full h-[250px] relative overflow-hidden rounded-xl shadow"
+              >
+                <Image
+                  src={img}
+                  alt={`${slides[activeIndex].title} - image ${i + 1}`}
+                  fill
+                  className="object-cover hover:scale-105 transition-transform duration-500 ease-in-out"
+                />
+              </div>
+            ))}
+          </div>
+        </motion.div>
+      </AnimatePresence>
+    </section>
   );
 };
 

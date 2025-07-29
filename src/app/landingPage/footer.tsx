@@ -15,12 +15,15 @@ const Footer = () => {
           <Link href="/termAndCondition" className="hover:text-gray-300">
             Terms of use
           </Link>
-          <a href="#" className="hover:text-gray-300">
+          {/* <a href="#" className="hover:text-gray-300">
             Cookie settings
-          </a>
-          <a href="#" className="hover:text-gray-300">
+          </a> */}
+          <Link
+            href="https://heartfulness.org/kanha"
+            className="hover:text-gray-300"
+          >
             Kanha Shantivanam
-          </a>
+          </Link>
         </div>
       </div>
     </footer>

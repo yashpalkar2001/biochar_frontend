@@ -21,7 +21,7 @@ export default function Brands() {
   const loopLogos = [...logos, ...logos];
 
   return (
-    <section className="bg-[#08141f] text-white">
+    <section className="bg- text-">
       <div className="max-w-7xl mx-auto px-6 py-16 overflow-hidden">
         {/* Tagline */}
         <p className="text-center text-xs uppercase tracking-wider text-gray-400 mb-10">

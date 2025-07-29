@@ -90,13 +90,13 @@ export default function FormAndFaq() {
     <section className=" " id="formForId">
       <div className="max-w-7xl mt-8 mx-auto md:grid md:grid-cols-12">
         {/* ─────── Image (above on mobile, left on desktop) ─────── */}
-        <div className="relative md:col-span-6">
+        <div className="relative md:col-span-6 px-6">
           <Image
             src="/cardImg.jpg" // ↖ replace with real path
             alt="Green landscape"
             width={1600}
             height={900}
-            className="w-full h-72 sm:h-96 md:h-full object-cover"
+            className="w-full h-72 sm:h-96 md:h-full object-cover rounded-xl"
           />
 
           {/* Optional badge */}
@@ -202,7 +202,7 @@ export default function FormAndFaq() {
             {/* Actions / Success */}
             {submitted ? (
               <p className="text-green-600 text-center text-sm">
-                Thank you! We’ll be in touch.
+                Thank you! We&apos;ll be in touch.
               </p>
             ) : (
               <div className="flex justify-center gap-2">
@@ -253,10 +253,13 @@ export default function FormAndFaq() {
         </div>
 
         {/* Desktop Grid View */}
-        <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left mt-12 text-gray-800 px-7">
+        <div
+          id="FAQs"
+          className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-8 text-left mt-12 text-gray-800 px-7"
+        >
           {faqs.map((faq, i) => (
             <div key={i} className="flex flex-col gap-4">
-              <FaQuinscape className=" text-2xl" />
+              <Image src={"/sticker.svg"} alt={"icon"} width={40} height={70} />
               <h4 className="font-serif text-lg">{faq.question}</h4>
               <p className="text-sm leading-relaxed text-gray-600">
                 {faq.answer}

@@ -1,11 +1,12 @@
 "use client";
 import Image from "next/image";
 import React from "react";
+import CountUp from "react-countup";
 
 const TransfomationPart = () => {
   return (
     <>
-      <section className="bg-[#e9edf2] py-6 md:px-7">
+      <section id="ourImpact" className="bg-[#e9edf2] py-6 md:px-7">
         <div className="max-w-7xl mx-auto px-5 py-10 lg:py-24">
           {/* <div className="grid md:grid-cols-12 md:gap-16"> */}
           <div className="md:flex md:justify-between w-full">
@@ -85,7 +86,7 @@ const TransfomationPart = () => {
             {/* After image */}
             <div className="relative">
               <Image
-                src="/girl.png"
+                src="/testimonile/video.jpg"
                 alt="Girl after transformation"
                 width={600}
                 height={500}
@@ -216,7 +217,7 @@ const TransfomationPart = () => {
                   Current
                 </span>
                 <h3 className="font-roboto font-semibold text-5xl leading-none mb-6">
-                  6,948 <br /> farmers
+                  <CountUp end={6948} duration={2} /> <br /> farmers
                 </h3>
                 <p className="text-sm text-gray-300">
                   Working in 8 states of India
@@ -228,7 +229,7 @@ const TransfomationPart = () => {
                   Current
                 </span>
                 <h3 className="font-roboto font-semibold text-5xl leading-none mb-6">
-                  3,216 <br /> credits
+                  <CountUp end={3216} duration={2} /> <br /> credits
                 </h3>
                 <p className="text-sm text-gray-300">
                   From 20 sites across India
@@ -240,7 +241,7 @@ const TransfomationPart = () => {
           <div className="flex flex-col space-y-6 w-full">
             <div className="bg-white rounded-2xl shadow px-8 py-12">
               <h3 className="text-4xl font-roboto font-semibold leading-tight mb-4">
-                18 Million <br /> farmers
+                <CountUp end={18} duration={2} /> Million <br /> farmers
               </h3>
               <p className="text-sm text-gray-600">
                 Direct access through partner network
@@ -249,7 +250,7 @@ const TransfomationPart = () => {
 
             <div className="bg-white rounded-2xl shadow px-8 py-12">
               <h3 className="text-4xl font-roboto font-semibold leading-tight mb-4">
-                100,000+ <br /> villages
+                <CountUp end={100000} duration={2} />+ <br /> villages
               </h3>
               <p className="text-sm text-gray-600">
                 Grassroot level engagement by partners
@@ -258,7 +259,7 @@ const TransfomationPart = () => {
 
             <div className="bg-white rounded-2xl shadow px-8 py-12">
               <h3 className="text-4xl font-roboto font-semibold leading-tight mb-4">
-                2 Million <br /> Carbon Credits
+                <CountUp end={2} duration={2} /> Million <br /> Carbon Credits
               </h3>
               <p className="text-sm text-gray-600">By 2030</p>
             </div>
