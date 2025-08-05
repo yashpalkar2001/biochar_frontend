@@ -230,7 +230,7 @@ export default function FormAndFaq() {
             {/* Actions / Success */}
             {submitted ? (
               <p className="text-green-600 text-center text-sm">
-                Thank you! We&apos;ll be in touch.
+               Thank you for your inquiry!
               </p>
             ) : (
               <div className="flex justify-center gap-2">
